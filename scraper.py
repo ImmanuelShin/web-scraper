@@ -24,5 +24,8 @@ def get_citations_needed_report(url):
     if parent_sup_tag:
         parent_p_tag = parent_sup_tag.find_parent('p')
         if parent_p_tag:
-            string += parent_p_tag.get_text().strip() + "\n"
+            string += "Citation needed for: " + parent_p_tag.get_text().strip() + "\n\n"
   return string
+
+
+print(get_citations_needed_report(url))
